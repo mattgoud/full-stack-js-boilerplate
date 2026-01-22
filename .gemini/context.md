@@ -10,7 +10,7 @@
 - Installation: `pnpm install` at the root.
 - Add dependency: `pnpm add [package] --filter [app]`.
 - Global execution: `pnpm dev` (runs `turbo dev`).
-- Validation: `pnpm turbo check-types` and `pnpm lint`.
+- Validation: `pnpm turbo check-types`, `pnpm lint`, and `pnpm test`.
 
 ## Environment Variables
 - `.env` files are located in `apps/frontend/` and `apps/backend/`.

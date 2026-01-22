@@ -3,12 +3,12 @@
 ## Verification and Quality
 - **Linting**: `pnpm turbo lint` (Runs ESLint on the entire monorepo and fixes what can be fixed).
 - **Type-Check**: `pnpm turbo check-types` (Verifies global TypeScript consistency).
-- **Test**: `pnpm turbo test` (Executes the unit and integration test suite).
+- **Test**: `pnpm test` (Executes the unit and integration test suite).
 - **Doc-Check**: `./.gemini/scripts/verify-docs.sh` (Verifies if code changes are mirrored in documentation).
 - **Security-Check**: `./.gemini/scripts/verify-security.sh` (Scans for secrets and unwanted files).
 
 ## Test Tools
-- **Global Test**: `pnpm turbo test` (Runs Vitest everywhere).
+- **Global Test**: `pnpm test` (Runs Vitest everywhere).
 - **Backend Test**: `pnpm --filter backend test` (NestJS Tests).
 - **Frontend Test**: `pnpm --filter frontend test` (React + Shadcn Tests).
 

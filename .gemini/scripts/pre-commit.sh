@@ -21,8 +21,8 @@ pnpm turbo check-types
 echo "--- 📚 Documentation Check ---"
 ./.gemini/scripts/verify-docs.sh
 
-# 4. Unit tests (if applicable)
-# echo "--- 🧪 Running Tests ---"
-# pnpm turbo test
+# 4. Unit tests
+echo "--- 🧪 Running Tests ---"
+pnpm test
 
 echo "✅ All checks passed! Ready to commit."
