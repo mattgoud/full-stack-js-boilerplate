@@ -15,7 +15,7 @@ function adapt(files: any[], type: 'page' | 'meta'): any[] {
 }
 
 export const source = loader({
-  baseUrl: '/dashboard/docs',
+  baseUrl: '/docs',
   source: {
     files: [...adapt(docs, 'page'), ...adapt(meta, 'meta')],
   },

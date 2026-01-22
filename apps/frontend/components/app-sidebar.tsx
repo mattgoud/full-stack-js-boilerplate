@@ -40,23 +40,23 @@ const data = {
       items: [
         {
           title: "Project Overview",
-          url: "/dashboard/docs",
+          url: "/docs",
         },
         {
           title: "Frontend Docs",
-          url: "/dashboard/docs/frontend",
+          url: "/docs/frontend",
         },
         {
           title: "Backend Docs",
-          url: "/dashboard/docs/backend",
+          url: "/docs/backend",
         },
         {
           title: "Workflows",
-          url: "/dashboard/docs/workflows",
+          url: "/docs/workflows",
         },
         {
           title: "AI-Driven Guide",
-          url: "/dashboard/docs/ai-guide",
+          url: "/docs/ai-guide",
         },
       ],
     },
