@@ -12,25 +12,17 @@ description: A modern, high-performance monorepo boilerplate for building scalab
 The project is organized as a monorepo using [Turborepo](https://turbo.build/) and [pnpm](https://pnpm.io/) workspaces. Documentation is independent and accessible at `/docs` using [Fumadocs](https://fumadocs.dev/).
 
 <Cards>
-  <Card title="Frontend" icon={<LayoutIcon />}>
-    Built with [Next.js 16+](https://nextjs.org/), [React 19](https://react.dev/), [Tailwind CSS v4](https://tailwindcss.com/), and [Shadcn/UI](https://ui.shadcn.com/).
-    
-    [Explore Frontend Docs →](/docs/frontend)
+  <Card title="Frontend" href="/docs/frontend" icon={<LayoutIcon />}>
+    Next.js 16+, React 19, Tailwind CSS v4, Shadcn/UI.
   </Card>
-  <Card title="Backend" icon={<ServerIcon />}>
-    [NestJS 11](https://nestjs.com/) REST API powered by [Prisma ORM](https://www.prisma.io/) and [PostgreSQL](https://www.postgresql.org/).
-    
-    [Explore Backend Docs →](/docs/backend)
+  <Card title="Backend" href="/docs/backend" icon={<ServerIcon />}>
+    NestJS 11 REST API, Prisma ORM.
   </Card>
-  <Card title="Shared" icon={<BoxIcon />}>
-    Centralized [TypeScript](https://www.typescriptlang.org/) types, DTOs, and utilities in @repo/shared.
-    
-    [Learn about Monorepo Integration →](/docs/backend#4-monorepo-integration)
+  <Card title="Shared" href="/docs/backend#4-monorepo-integration" icon={<BoxIcon />}>
+    Shared TypeScript types, DTOs, and utilities in @repo/shared.
   </Card>
-  <Card title="Infrastructure" icon={<DatabaseIcon />}>
-    Orchestrated with [Docker Compose](https://docs.docker.com/compose/) for database and services.
-    
-    [View Deployment Guide →](/docs/backend#3-development)
+  <Card title="Infrastructure" href="/docs/backend#3-development" icon={<DatabaseIcon />}>
+    Docker Compose for PostgreSQL and services.
   </Card>
 </Cards>
 
