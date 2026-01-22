@@ -42,7 +42,34 @@ The documentation features a full-text search engine powered by [Orama](https://
 - **Instant Sync**: As soon as you update an MDX file, the changes are reflected in the search results without rebuilding the application.
 - **Granular Results**: The engine indexes content block by block, providing precise links to specific sections of the documentation.
 
-## 2. Recommended MCP Servers
+## 2. Structured Feature Planning (Conductor)
+
+This boilerplate uses the **Conductor** methodology to manage complex features through isolated units of work called **Tracks**.
+
+### What is a Track?
+
+A Track is a self-contained folder containing everything an AI agent needs to implement a specific goal:
+- **`spec.md`**: The source of truth for requirements and acceptance criteria.
+- **`plan.md`**: A step-by-step implementation guide with TDD requirements.
+- **`metadata.json`**: Tracking state, priority, and timestamps.
+
+### The Conductor Workflow
+
+<Steps>
+### Initialization
+Use `conductor:newTrack` to define a new feature. The agent will collaboratively generate the specification and plan.
+
+### Implementation
+Run `conductor:implement --track <id>` to start the automated coding process. The agent will strictly follow the `plan.md`.
+
+### Verification & Checkpointing
+At the end of each phase, the agent executes a mandatory **Phase Completion Protocol**:
+1. Automated tests run.
+2. Manual verification steps are proposed to the user.
+3. A **Checkpoint Commit** is created with an auditable verification report in Git Notes.
+</Steps>
+
+## 3. Recommended MCP Servers
 
 The [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) connects the AI directly to your environment.
 
