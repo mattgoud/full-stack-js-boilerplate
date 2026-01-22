@@ -3,14 +3,15 @@ title: Workflows & Guides
 description: Standard procedures for adding components, testing, and linting.
 ---
 
-## 1. Adding UI Components (Shadcn/UI)
+## 1. Adding UI Components
 
-<Callout title="Workflow Updated" type="info">
-  The standard CLI command is now fully supported.
-</Callout>
+We use [Shadcn/UI](https://ui.shadcn.com/) for our design system.
 
-### Installation Command
+<Steps>
+### Select Component
+Browse the components on the [Shadcn/UI website](https://ui.shadcn.com/docs/components/accordion).
 
+### Installation
 Simply navigate to the frontend directory and run:
 
 ```bash
@@ -18,27 +19,39 @@ cd apps/frontend
 pnpm dlx shadcn@latest add [component-name]
 ```
 
-This will automatically handle dependencies and file placement.
+### Verification
+The command will automatically handle dependencies and place the files in `apps/frontend/components/ui/`.
+</Steps>
 
 ## 2. Component Development
 
-1. Create file in `apps/frontend/components/`.
-2. Start with a standard export.
-3. Add `"use client"` **only** if interactive.
+Follow these rules when creating new components:
+
+1. Create the file in `apps/frontend/components/`.
+2. Start with a standard functional component export.
+3. Use the `"use client"` directive **only** if the component is interactive (hooks, events).
 
 ## 3. Quality Assurance
 
-**Linting**
-```bash
-pnpm --filter frontend lint
-```
+Maintain code quality using these automated tools.
 
-**Type Checking**
-```bash
-pnpm --filter frontend check-types
-```
-
-**Testing**
-```bash
-pnpm --filter frontend test
-```
+<Tabs items={['Linting', 'Types', 'Testing']}>
+  <Tab value="Linting">
+    Check for code style and potential errors:
+    ```bash
+    pnpm --filter frontend lint
+    ```
+  </Tab>
+  <Tab value="Types">
+    Run [TypeScript](https://www.typescriptlang.org/) validation:
+    ```bash
+    pnpm --filter frontend check-types
+    ```
+  </Tab>
+  <Tab value="Testing">
+    Run unit tests with [Vitest](https://vitest.dev/):
+    ```bash
+    pnpm --filter frontend test
+    ```
+  </Tab>
+</Tabs>

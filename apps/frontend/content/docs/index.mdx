@@ -5,40 +5,48 @@ description: A modern, high-performance monorepo boilerplate for building scalab
 
 ## 1. Architecture
 
-The project is organized as a monorepo using **Turborepo** and **pnpm** workspaces. Documentation is independent and accessible at `/docs` using **Fumadocs**.
+<Callout title="Modern Tech Stack" type="info">
+  This boilerplate uses the latest versions of Next.js, NestJS, and Prisma, optimized for performance and type safety.
+</Callout>
+
+The project is organized as a monorepo using [Turborepo](https://turbo.build/) and [pnpm](https://pnpm.io/) workspaces. Documentation is independent and accessible at `/docs` using [Fumadocs](https://fumadocs.dev/).
 
 <Cards>
-  <Card title="apps/frontend">
-    Next.js 16+, React 19, Tailwind v4, Shadcn/UI, Fumadocs.
+  <Card title="Frontend" href="/docs/frontend" icon={<LayoutIcon />}>
+    [Next.js 16+](https://nextjs.org/), [React 19](https://react.dev/), [Tailwind CSS v4](https://tailwindcss.com/), [Shadcn/UI](https://ui.shadcn.com/).
   </Card>
-  <Card title="apps/backend">
-    NestJS 11 REST API, Modular Architecture, Prisma ORM.
+  <Card title="Backend" href="/docs/backend" icon={<ServerIcon />}>
+    [NestJS 11](https://nestjs.com/) REST API, [Prisma ORM](https://www.prisma.io/).
   </Card>
-  <Card title="packages/shared">
-    Shared TypeScript types, DTOs, and utilities.
+  <Card title="Shared" href="/docs/backend#4-monorepo-integration" icon={<BoxIcon />}>
+    Shared TypeScript types, DTOs, and utilities in `@repo/shared`.
   </Card>
-  <Card title="Infrastructure">
-    Docker Compose for PostgreSQL and services.
+  <Card title="Infrastructure" href="/docs/backend#3-development" icon={<DatabaseIcon />}>
+    [Docker Compose](https://docs.docker.com/compose/) for PostgreSQL and services.
   </Card>
 </Cards>
 
 ## 2. AI Agent & Living Documentation
 
-This boilerplate is designed to be **AI-First**. It includes a "Living Documentation" workflow that ensures code and documentation stay in sync.
+This boilerplate is designed to be **AI-First**. It includes a [Living Documentation](/docs/ai-guide) workflow that ensures code and documentation stay in sync.
 
-- **Agent Context**: Optimized for **Gemini CLI** via the `.gemini/` folder.
+- **Agent Context**: Optimized for [Gemini CLI](https://github.com/google-gemini/gemini-cli) via the `.gemini/` folder.
 - **Rules & Skills**: Custom instructions guide AI agents through complex tasks.
 - **Sync Verification**: Use the `doc-check` tool to ensure architectural changes are documented.
 
 ## 3. Getting Started
 
+<Steps>
 ### Prerequisites
 
-- **Node.js**: Latest LTS.
-- **pnpm**: `v10.28.1`.
-- **Docker**: Required for database.
+Ensure you have the following installed:
+- [Node.js](https://nodejs.org/) (Latest LTS)
+- [pnpm](https://pnpm.io/) `v10.28.1`
+- [Docker](https://www.docker.com/) (for database)
 
 ### Installation
+
+Clone the repository and install dependencies:
 
 ```bash
 pnpm install
@@ -46,17 +54,25 @@ pnpm install
 
 ### Running the Project
 
-Choose one of the following methods to run the application:
-
-#### Option 1: Local Development (Recommended)
-1. **Start the database**: `docker compose up db -d`
-2. **Run dev servers**: `pnpm dev`
-
-#### Option 2: Full Docker
-Run the entire stack inside containers:
-```bash
-docker compose up
-```
+<Tabs items={['Local Development', 'Full Docker']}>
+  <Tab value="Local Development">
+    1. **Start the database**: 
+    ```bash
+    docker compose up db -d
+    ```
+    2. **Run dev servers**: 
+    ```bash
+    pnpm dev
+    ```
+  </Tab>
+  <Tab value="Full Docker">
+    Run the entire stack inside containers:
+    ```bash
+    docker compose up
+    ```
+  </Tab>
+</Tabs>
+</Steps>
 
 ## 4. Key Commands
 
@@ -64,10 +80,10 @@ docker compose up
 | :--- | :--- |
 | `pnpm dev` | Start all apps in development mode. |
 | `pnpm build` | Build all packages and applications. |
-| `pnpm lint` | Run ESLint across the monorepo. |
+| `pnpm lint` | Run [ESLint](https://eslint.org/) across the monorepo. |
 | `pnpm turbo check-types` | Run global TypeScript type checking. |
 | `pnpm doc-check` | Verify if documentation is in sync with code changes. |
-| `pnpm --filter backend prisma:migrate` | Run database migrations. |
+| `pnpm --filter backend prisma:migrate` | Run [Prisma](https://www.prisma.io/) migrations. |
 
 ## 5. Development Conventions
 
@@ -81,4 +97,10 @@ docker compose up
 
 <Callout title="Shared Code" type="info">
   All common interfaces and DTOs MUST reside in `@repo/shared`.
+</Callout>
+
+---
+
+<Callout title="Ready to build?" type="warn">
+  Check our [AI Guide](/docs/ai-guide) to see how to collaborate with AI agents effectively, or dive into the [Workflows](/docs/workflows) to start coding.
 </Callout>

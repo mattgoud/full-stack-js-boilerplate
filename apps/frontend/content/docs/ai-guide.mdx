@@ -15,22 +15,28 @@ This project uses a **Living Documentation** strategy. The documentation is code
 
 To ensure the documentation stays in sync, the project uses automated checks:
 
-1. **Detection**: A dedicated script `./.gemini/scripts/verify-docs.sh` compares code changes with documentation updates.
-2. **Security**: The `Security-Check` tool (`verify-security.sh`) scans for secrets and unwanted files before commit.
-3. **IA Mandate**: The `.gemini/rules.md` forces the agent to run these checks before finalizing any task.
-4. **Registry**: These tools are registered in `.gemini/tools.md`.
+<Steps>
+### Detection
+A dedicated script `./.gemini/scripts/verify-docs.sh` compares code changes with documentation updates.
+
+### Security
+The `Security-Check` tool (`verify-security.sh`) scans for secrets and unwanted files before commit.
+
+### IA Mandate
+The `.gemini/rules.md` forces the agent to run these checks before finalizing any task.
+
+### Registry
+These tools are registered in `.gemini/tools.md`.
+</Steps>
 
 #### How to use the workflow:
 
 - **AI Agent**: Will automatically run `verify-docs.sh` and warn you if you forgot to document a feature.
 - **Manual**: You can run the check anytime to see if your docs are lagging behind your features.
 
-#### Example:
-If you modify `apps/backend/src/users/users.service.ts` but don't touch `apps/frontend/content/docs/backend.mdx`, the `Doc-Check` tool will trigger a warning.
-
 ### Search Engine (Orama)
 
-The documentation features a full-text search engine powered by **Orama**.
+The documentation features a full-text search engine powered by [Orama](https://orama.com/).
 
 - **Dynamic Indexing**: There is **no manual indexing step**. The search results are generated on-the-fly via the `/api/search` route.
 - **Instant Sync**: As soon as you update an MDX file, the changes are reflected in the search results without rebuilding the application.
@@ -38,12 +44,12 @@ The documentation features a full-text search engine powered by **Orama**.
 
 ## 2. Recommended MCP Servers
 
-The **Model Context Protocol (MCP)** connects the AI directly to your environment.
+The [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) connects the AI directly to your environment.
 
 | Server | Benefit |
 | :--- | :--- |
 | Filesystem | Read/Write access. Crucial for this boilerplate. |
-| PostgreSQL | Debug schemas/queries via `docker compose`. |
+| [PostgreSQL](https://www.postgresql.org/) | Debug schemas/queries via `docker compose`. |
 | GitHub | Context from Issues and PRs. |
 
 ## 3. Optimizing Context (.gemini)

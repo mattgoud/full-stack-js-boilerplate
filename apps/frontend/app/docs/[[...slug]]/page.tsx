@@ -7,6 +7,11 @@ import {
 } from 'fumadocs-ui/page';
 import { notFound } from 'next/navigation';
 import defaultMdxComponents from 'fumadocs-ui/mdx';
+import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
+import { Steps } from 'fumadocs-ui/components/steps';
+import { Card, Cards } from 'fumadocs-ui/components/card';
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Layout as LayoutIcon, Server as ServerIcon, Box as BoxIcon, Database as DatabaseIcon } from 'lucide-react';
 
 export default async function Page(props: {
   params: Promise<{ slug?: string[] }>;
@@ -25,7 +30,21 @@ export default async function Page(props: {
       <DocsTitle>{page.data.title}</DocsTitle>
       <DocsDescription>{page.data.description}</DocsDescription>
       <DocsBody>
-        <MDX components={{ ...defaultMdxComponents }} />
+        <MDX 
+          components={{ 
+            ...defaultMdxComponents,
+            Tab,
+            Tabs,
+            Steps,
+            Card,
+            Cards,
+            Callout,
+            LayoutIcon,
+            ServerIcon,
+            BoxIcon,
+            DatabaseIcon
+          }} 
+        />
       </DocsBody>
     </DocsPage>
   );

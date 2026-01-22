@@ -6,19 +6,19 @@ description: Deep dive into the frontend architectural decisions, structure, and
 ## 1. Key Features
 
 <Cards>
-  <Card title="Framework">
+  <Card title="Framework" href="https://nextjs.org/" icon={<LayoutIcon />}>
     Next.js 16 (App Router)
   </Card>
-  <Card title="Styling">
+  <Card title="Styling" href="https://tailwindcss.com/" icon={<BoxIcon />}>
     Tailwind CSS v4 + Animate
   </Card>
-  <Card title="UI Library">
-    Shadcn/UI (Radix Primitives)
+  <Card title="UI Library" href="https://ui.shadcn.com/" icon={<BoxIcon />}>
+    Shadcn/UI ([Radix Primitives](https://www.radix-ui.com/))
   </Card>
-  <Card title="State Management">
-    RSC + React 19 Hooks
+  <Card title="Icons" href="https://lucide.dev/" icon={<LayoutIcon />}>
+    [Lucide React](https://lucide.dev/)
   </Card>
-  <Card title="Documentation">
+  <Card title="Documentation" href="https://fumadocs.dev/" icon={<DatabaseIcon />}>
     Fumadocs (MDX based)
   </Card>
 </Cards>
@@ -42,24 +42,41 @@ apps/frontend/
 
 ## 3. Development
 
-Runs on [http://localhost:3000](http://localhost:3000).
+The frontend development server runs on [http://localhost:3000](http://localhost:3000).
 
-```bash
-pnpm --filter frontend dev
-```
+<Tabs items={['pnpm', 'docker']}>
+  <Tab value="pnpm">
+    ```bash
+    pnpm --filter frontend dev
+    ```
+  </Tab>
+  <Tab value="docker">
+    ```bash
+    docker compose up frontend
+    ```
+  </Tab>
+</Tabs>
 
 ### Rendering Strategy
 
-We adhere to the **"Server First"** mentality of Next.js 16.
+<Callout title="Server Components First" type="info">
+  We adhere to the **"Server First"** mentality of [Next.js 16](https://nextjs.org/docs/app/building-your-application/rendering/server-components).
+</Callout>
 
 - **Server Components (Default)**: Used for data fetching, layouts, and non-interactive UI.
 - **Client Components ("use client")**: Used strictly for event listeners, stateful hooks, and browser APIs.
-- **Static Site Generation (SSG)**: Documentation pages are statically generated at build time.
+- **Static Site Generation (SSG)**: Documentation pages are statically generated using [Fumadocs MDX](https://fumadocs.dev/docs/mdx).
 
 ### Tailwind CSS v4
 
-<Callout title="No tailwind.config.js" type="warn">
-  Configuration is handled directly in CSS using the `@theme` directive in `apps/frontend/app/globals.css`.
+<Callout title="Modern Configuration" type="warn">
+  Tailwind v4 removes the need for `tailwind.config.js`. All configuration (theme, colors, spacing) is handled directly in CSS using the `@theme` directive in `apps/frontend/app/globals.css`.
+</Callout>
+
+---
+
+<Callout title="Performance Tip" type="idea">
+  Always prefer CSS variables over hardcoded colors to ensure full compatibility with the [Theme Switcher](/dashboard).
 </Callout>
 
 ## 4. Monorepo Integration

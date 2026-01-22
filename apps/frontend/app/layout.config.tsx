@@ -1,5 +1,6 @@
 import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
 import { LayoutDashboard } from 'lucide-react';
+import { Separator } from '@/components/ui/separator';
 
 /**
  * Shared layout configurations
@@ -18,6 +19,10 @@ export const baseOptions: BaseLayoutProps = {
       text: 'Dashboard',
       url: '/dashboard',
       active: 'nested-url',
-    }
+    },
+    {
+      type: 'custom',
+      children: <Separator className="my-2" />,
+    },
   ],
 };

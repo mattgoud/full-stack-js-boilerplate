@@ -6,19 +6,19 @@ description: Robust REST API built with NestJS 11 and Prisma.
 ## 1. Key Features
 
 <Cards>
-  <Card title="Framework">
+  <Card title="Framework" href="https://nestjs.com/" icon={<ServerIcon />}>
     NestJS 11
   </Card>
-  <Card title="Database">
+  <Card title="Database" href="https://www.postgresql.org/" icon={<DatabaseIcon />}>
     PostgreSQL (Docker)
   </Card>
-  <Card title="ORM">
+  <Card title="ORM" href="https://www.prisma.io/" icon={<DatabaseIcon />}>
     Prisma Client v7
   </Card>
-  <Card title="Architecture">
+  <Card title="Architecture" icon={<ServerIcon />}>
     Modular & Controller-based
   </Card>
-  <Card title="Monorepo">
+  <Card title="Monorepo" href="/docs/backend#4-monorepo-integration" icon={<BoxIcon />}>
     Shared types from `@repo/shared`
   </Card>
 </Cards>
@@ -39,23 +39,50 @@ apps/backend/
 
 ## 3. Development
 
-Runs on [http://localhost:3001](http://localhost:3001).
+The backend API runs on [http://localhost:3001](http://localhost:3001).
 
-```bash
-pnpm --filter backend dev
-```
+<Tabs items={['pnpm', 'docker']}>
+  <Tab value="pnpm">
+    ```bash
+    pnpm --filter backend dev
+    ```
+  </Tab>
+  <Tab value="docker">
+    ```bash
+    docker compose up backend
+    ```
+  </Tab>
+</Tabs>
 
 ### Database Setup
 
-The database is managed via Docker and Prisma.
+<Callout title="PostgreSQL & Prisma" type="info">
+  The database is managed via Docker and [Prisma](https://www.prisma.io/docs/getting-started).
+</Callout>
 
-- **Start Database**: `docker compose up db -d`
-- **Migrations**: `pnpm --filter backend prisma:migrate`
-- **Prisma Studio**: `pnpm --filter backend prisma:studio`
+<Tabs items={['CLI', 'GUI']}>
+  <Tab value="CLI">
+    - **Start Database**: `docker compose up db -d`
+    - **Migrations**: `pnpm --filter backend prisma:migrate`
+  </Tab>
+  <Tab value="GUI">
+    - **Prisma Studio**: 
+    ```bash
+    pnpm --filter backend prisma:studio
+    ```
+    Access the visual editor at [http://localhost:5555](http://localhost:5555).
+  </Tab>
+</Tabs>
+
+---
+
+<Callout title="Data Safety" type="error">
+  Never run `prisma migrate reset` in production as it will delete all data.
+</Callout>
 
 ## 4. Monorepo Integration
 
-All common interfaces, DTOs, and validation logic MUST reside in the shared package to ensure end-to-end type safety.
+All common interfaces, DTOs, and validation logic MUST reside in the shared package to ensure end-to-end type safety between the [Frontend](/docs/frontend) and the Backend.
 
 ```typescript
 // Shared DTO usage in controller
