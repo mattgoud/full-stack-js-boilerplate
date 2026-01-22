@@ -4,7 +4,7 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* On importe le preset Fumadocs qui contient les thèmes et composants */
+/* Import the Fumadocs preset containing themes and components */
 @import "fumadocs-ui/css/neutral.css";
 @import "fumadocs-ui/css/preset.css";
 
