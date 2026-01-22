@@ -1,10 +1,9 @@
 #!/bin/bash
 
 # Simple script to check if documentation should be updated
-# Logic: If apps/backend or apps/frontend (excluding content/docs) has changes, 
-# but content/docs has none, it might need attention.
+# Logic: If code or core configuration has changes, but content/docs has none, it might need attention.
 
-CHANGES_CODE=$(git diff --name-only HEAD | grep -E "^apps/(backend|frontend/app|frontend/components)|^packages/shared" | grep -v "content/docs")
+CHANGES_CODE=$(git diff --name-only HEAD | grep -E "^apps/(backend|frontend/app|frontend/components)|^packages/shared|^\.gemini" | grep -v "content/docs")
 CHANGES_DOCS=$(git diff --name-only HEAD | grep "^apps/frontend/content/docs")
 
 if [ -n "$CHANGES_CODE" ] && [ -z "$CHANGES_DOCS" ]; then

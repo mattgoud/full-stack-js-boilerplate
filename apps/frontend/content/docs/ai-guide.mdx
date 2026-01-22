@@ -16,8 +16,9 @@ This project uses a **Living Documentation** strategy. The documentation is code
 To ensure the documentation stays in sync, the project uses automated checks:
 
 1. **Detection**: A dedicated script `./.gemini/scripts/verify-docs.sh` compares code changes with documentation updates.
-2. **IA Mandate**: The `.gemini/rules.md` forces the agent to run this check before finalizing any task.
-3. **Registry**: The tool is registered as `Doc-Check` in `.gemini/tools.md`.
+2. **Security**: The `Security-Check` tool (`verify-security.sh`) scans for secrets and unwanted files before commit.
+3. **IA Mandate**: The `.gemini/rules.md` forces the agent to run these checks before finalizing any task.
+4. **Registry**: These tools are registered in `.gemini/tools.md`.
 
 #### How to use the workflow:
 
