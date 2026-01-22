@@ -51,10 +51,6 @@ const data = {
           url: "/docs/backend",
         },
         {
-          title: "Workflows",
-          url: "/docs/workflows",
-        },
-        {
           title: "AI-Driven Guide",
           url: "/docs/ai-guide",
         },
