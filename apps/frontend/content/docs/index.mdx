@@ -36,43 +36,43 @@ This boilerplate is designed to be **AI-First**. It includes a [Living Documenta
 
 ## 3. Getting Started
 
-<Steps>
-### Prerequisites
+<Accordions>
+  <Accordion title="Prerequisites">
+    Ensure you have the following installed:
+    - [Node.js](https://nodejs.org/) (Latest LTS)
+    - [pnpm](https://pnpm.io/) `v10.28.1`
+    - [Docker](https://www.docker.com/) (for database)
+  </Accordion>
 
-Ensure you have the following installed:
-- [Node.js](https://nodejs.org/) (Latest LTS)
-- [pnpm](https://pnpm.io/) `v10.28.1`
-- [Docker](https://www.docker.com/) (for database)
+  <Accordion title="Installation">
+    Clone the repository and install dependencies:
 
-### Installation
-
-Clone the repository and install dependencies:
-
-```bash
-pnpm install
-```
-
-### Running the Project
-
-<Tabs items={['Local Development', 'Full Docker']}>
-  <Tab value="Local Development">
-    1. **Start the database**: 
     ```bash
-    docker compose up db -d
+    pnpm install
     ```
-    2. **Run dev servers**: 
-    ```bash
-    pnpm dev
-    ```
-  </Tab>
-  <Tab value="Full Docker">
-    Run the entire stack inside containers:
-    ```bash
-    docker compose up
-    ```
-  </Tab>
-</Tabs>
-</Steps>
+  </Accordion>
+
+  <Accordion title="Running the Project">
+    <Tabs items={['Local Development', 'Full Docker']}>
+      <Tab value="Local Development">
+        Start the database: 
+        ```bash
+        docker compose up db -d
+        ```
+        Run dev servers: 
+        ```bash
+        pnpm dev
+        ```
+      </Tab>
+      <Tab value="Full Docker">
+        Run the entire stack inside containers:
+        ```bash
+        docker compose up
+        ```
+      </Tab>
+    </Tabs>
+  </Accordion>
+</Accordions>
 
 ## 4. Key Commands
 
