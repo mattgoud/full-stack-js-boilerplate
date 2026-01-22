@@ -1,0 +1,45 @@
+{
+  "include": [
+    "src/**/*.ts",
+    "src/generated/**/*.ts",
+    "prisma/seed.ts",
+    "test/**/*.ts",
+    "prisma.config.ts",
+    "vitest.config.ts"
+  ],
+  "compilerOptions": {
+    /* Changes critical for NestJS */
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "target": "ES2021",
+    
+    /* Support decorators (Essential for Nest) */
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    
+    /* Interoperability and Standard */
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "declaration": true,
+    "removeComments": true,
+    "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "incremental": false,
+    "skipLibCheck": true,
+    "strictNullChecks": true,
+    "forceConsistentCasingInFileNames": true,
+    
+    /* Let Prisma and Nest work without too much noise */
+    "noImplicitAny": false,
+    "strictBindCallApply": false,
+    "noFallthroughCasesInSwitch": false,
+    
+    /* Test Aliases */
+    "paths": {
+      "@/*": ["src/*"],
+      "@db": ["src/generated/client.ts"],
+      "@db/*": ["src/generated/*"]
+    }
+  }
+}

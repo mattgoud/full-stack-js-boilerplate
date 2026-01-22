@@ -1,0 +1,44 @@
+---
+title: Workflows & Guides
+description: Standard procedures for adding components, testing, and linting.
+---
+
+## 1. Adding UI Components (Shadcn/UI)
+
+<Callout title="Workflow Updated" type="info" icon="CheckCircle2">
+  The standard CLI command is now fully supported.
+</Callout>
+
+### Installation Command
+
+Simply navigate to the frontend directory and run:
+
+```bash
+cd apps/frontend
+pnpm dlx shadcn@latest add [component-name]
+```
+
+This will automatically handle dependencies and file placement.
+
+## 2. Component Development
+
+1. Create file in `apps/frontend/components/`.
+2. Start with a standard export.
+3. Add `"use client"` **only** if interactive.
+
+## 3. Quality Assurance
+
+**Linting**
+```bash
+pnpm --filter frontend lint
+```
+
+**Type Checking**
+```bash
+pnpm --filter frontend check-types
+```
+
+**Testing**
+```bash
+pnpm --filter frontend test
+```

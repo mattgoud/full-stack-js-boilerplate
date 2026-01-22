@@ -1,0 +1,72 @@
+---
+title: AI-Driven Guide
+description: Optimize your workflow with LLMs by using the right tools and context strategies.
+---
+
+## 1. Living Documentation
+
+This project uses a **Living Documentation** strategy. The documentation is code, located in `apps/frontend/content/docs/`.
+
+<Callout title="The Golden Rule">
+  "Whenever you make a significant architectural change or update a workflow, you MUST update the corresponding documentation page in the same PR."
+</Callout>
+
+### The Verification Workflow
+
+To ensure the documentation stays in sync, the project uses automated checks:
+
+1. **Detection**: A dedicated script `./.gemini/scripts/verify-docs.sh` compares code changes with documentation updates.
+2. **IA Mandate**: The `.gemini/rules.md` forces the agent to run this check before finalizing any task.
+3. **Registry**: The tool is registered as `Doc-Check` in `.gemini/tools.md`.
+
+#### How to use the workflow:
+
+- **AI Agent**: Will automatically run `verify-docs.sh` and warn you if you forgot to document a feature.
+- **Manual**: You can run the check anytime to see if your docs are lagging behind your features.
+
+#### Example:
+If you modify `apps/backend/src/users/users.service.ts` but don't touch `apps/frontend/content/docs/backend.mdx`, the `Doc-Check` tool will trigger a warning.
+
+## 2. Recommended MCP Servers
+
+The **Model Context Protocol (MCP)** connects the AI directly to your environment.
+
+| Server | Benefit |
+| :--- | :--- |
+| Filesystem | Read/Write access. Crucial for this boilerplate. |
+| PostgreSQL | Debug schemas/queries via `docker compose`. |
+| GitHub | Context from Issues and PRs. |
+
+## 3. Optimizing Context (.gemini)
+
+The `.gemini/` folder is the "Brain" of your project context.
+
+<Cards>
+  <Card title="context.md">
+    High-level architecture & stack details.
+  </Card>
+  <Card title="rules.md">
+    Strict commandments (e.g. "No Prettier").
+  </Card>
+  <Card title="skills.md">
+    Recipes for complex tasks (migrations, new routes).
+  </Card>
+</Cards>
+
+## 4. Effective Prompting Strategies
+
+<Callout title="Task: Scaffolding a Page">
+  "I need a new Dashboard page at `/analytics`.
+  1. Use the 'Server First' pattern.
+  2. Create a skeleton loading state.
+  3. Use the `Overview` component for charts.
+  4. Follow `Layout` wrapper from `app/layout.tsx`.
+  Check `@repo/shared` for DTOs."
+</Callout>
+
+<Callout title="Task: Generating Shadcn Component" type="info">
+  "I need to add a `Tabs` component.
+  1. Use the CLI: `pnpm dlx shadcn@latest add tabs` in the frontend directory.
+  2. Verify the component is created in `components/ui`.
+  3. Use it in the target page following existing patterns."
+</Callout>

@@ -1,0 +1,23 @@
+/* Thème neutre de Fumadocs isolé dans une classe */
+.fd-theme-fuma {
+  @import "fumadocs-ui/css/neutral.css";
+  
+  /* On s'assure que Fumadocs utilise ses propres variables ici */
+  --fd-background: hsl(0 0% 100%);
+  --fd-foreground: hsl(0 0% 3.9%);
+  --fd-muted: hsl(0 0% 96.1%);
+  --fd-muted-foreground: hsl(0 0% 45.1%);
+  --fd-border: hsl(0 0% 89.8%);
+  --fd-primary: hsl(0 0% 9%);
+  --fd-primary-foreground: hsl(0 0% 98%);
+}
+
+.dark .fd-theme-fuma {
+  --fd-background: hsl(0 0% 3.9%);
+  --fd-foreground: hsl(0 0% 98%);
+  --fd-muted: hsl(0 0% 14.9%);
+  --fd-muted-foreground: hsl(0 0% 63.9%);
+  --fd-border: hsl(0 0% 14.9%);
+  --fd-primary: hsl(0 0% 98%);
+  --fd-primary-foreground: hsl(0 0% 9%);
+}

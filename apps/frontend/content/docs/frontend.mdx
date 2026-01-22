@@ -1,0 +1,77 @@
+---
+title: Frontend Documentation
+description: Deep dive into the frontend architectural decisions, structure, and constraints.
+---
+
+## 1. Key Features
+
+<Cards>
+  <Card title="Framework">
+    Next.js 16 (App Router)
+  </Card>
+  <Card title="Styling">
+    Tailwind CSS v4 + Animate
+  </Card>
+  <Card title="UI Library">
+    Shadcn/UI (Radix Primitives)
+  </Card>
+  <Card title="State Management">
+    RSC + React 19 Hooks
+  </Card>
+  <Card title="Documentation">
+    Fumadocs (MDX based)
+  </Card>
+</Cards>
+
+## 2. Directory Structure
+
+```txt
+apps/frontend/
+├── app/                 # App Router Pages & Layouts
+│   ├── globals.css      # Global CSS & Tailwind v4 Config
+│   └── layout.tsx       # Root Layout
+├── content/docs/        # MDX Documentation files
+├── components/          # React Components
+│   ├── ui/              # Shadcn/UI Primitives
+│   └── ...              # Feature-specific components
+├── lib/
+│   ├── source.ts        # Fumadocs configuration
+│   └── utils.ts         # Utilities (cn, formatters)
+└── public/              # Static Assets
+```
+
+## 3. Development
+
+Runs on [http://localhost:3000](http://localhost:3000).
+
+```bash
+pnpm --filter frontend dev
+```
+
+### Rendering Strategy
+
+We adhere to the **"Server First"** mentality of Next.js 16.
+
+- **Server Components (Default)**: Used for data fetching, layouts, and non-interactive UI.
+- **Client Components ("use client")**: Used strictly for event listeners, stateful hooks, and browser APIs.
+- **Static Site Generation (SSG)**: Documentation pages are statically generated at build time.
+
+### Tailwind CSS v4
+
+<Callout title="No tailwind.config.js" type="warn">
+  Configuration is handled directly in CSS using the `@theme` directive in `apps/frontend/app/globals.css`.
+</Callout>
+
+## 4. Monorepo Integration
+
+The frontend **never** duplicates types defined in the backend. It imports them from the shared package.
+
+```typescript
+import { UserDto } from "@repo/shared";
+```
+
+## 5. Testing
+
+| Type | Command |
+| :--- | :--- |
+| Unit Tests | `pnpm --filter frontend test` |

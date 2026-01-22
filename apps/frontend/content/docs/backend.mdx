@@ -1,0 +1,70 @@
+---
+title: Backend Documentation
+description: Robust REST API built with NestJS 11 and Prisma.
+---
+
+## 1. Key Features
+
+<Cards>
+  <Card title="Framework">
+    NestJS 11
+  </Card>
+  <Card title="Database">
+    PostgreSQL (Docker)
+  </Card>
+  <Card title="ORM">
+    Prisma Client v7
+  </Card>
+  <Card title="Architecture">
+    Modular & Controller-based
+  </Card>
+  <Card title="Monorepo">
+    Shared types from `@repo/shared`
+  </Card>
+</Cards>
+
+## 2. Directory Structure
+
+```txt
+apps/backend/
+├── src/                 # Source code
+│   ├── *.module.ts      # Domain modules
+│   ├── *.controller.ts  # API Endpoints
+│   └── *.service.ts     # Business Logic
+├── prisma/              # Database Schema & Seeds
+│   └── schema.prisma    # Prisma Definition
+├── test/                # E2E Tests
+└── Dockerfile           # Backend Containerization
+```
+
+## 3. Development
+
+Runs on [http://localhost:3001](http://localhost:3001).
+
+```bash
+pnpm --filter backend dev
+```
+
+### Database Setup
+
+The database is managed via Docker and Prisma.
+
+- **Start Database**: `docker compose up db -d`
+- **Migrations**: `pnpm --filter backend prisma:migrate`
+- **Prisma Studio**: `pnpm --filter backend prisma:studio`
+
+## 4. Monorepo Integration
+
+All common interfaces, DTOs, and validation logic MUST reside in the shared package to ensure end-to-end type safety.
+
+```typescript
+// Shared DTO usage in controller
+import { CreateUserDto } from "@repo/shared";
+```
+
+## 5. Testing
+
+| Type | Command |
+| :--- | :--- |
+| Unit Tests | `pnpm --filter backend test` |
+| E2E Tests | `pnpm --filter backend test:e2e` |

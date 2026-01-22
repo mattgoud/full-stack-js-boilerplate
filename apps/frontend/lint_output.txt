@@ -1,0 +1,31 @@
+
+> frontend@0.1.0 lint /home/mgoudjil/projects/labs/full-stack-js-boilerplate/apps/frontend
+> eslint
+
+
+/home/mgoudjil/projects/labs/full-stack-js-boilerplate/apps/frontend/.source/browser.ts
+  1:1   error  Do not use "@ts-nocheck" because it alters compilation errors                                                                                                                                                                                                                                                                                                                              @typescript-eslint/ban-ts-comment
+  6:12  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+
+/home/mgoudjil/projects/labs/full-stack-js-boilerplate/apps/frontend/.source/dynamic.ts
+  1:1   error    Do not use "@ts-nocheck" because it alters compilation errors                                                                                                                                                                                                                                                                                                                              @typescript-eslint/ban-ts-comment
+  5:7   warning  'create' is assigned a value but never used                                                                                                                                                                                                                                                                                                                                                @typescript-eslint/no-unused-vars
+  6:12  error    The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+
+/home/mgoudjil/projects/labs/full-stack-js-boilerplate/apps/frontend/.source/server.ts
+   1:1   error  Do not use "@ts-nocheck" because it alters compilation errors                                                                                                                                                                                                                                                                                                                              @typescript-eslint/ban-ts-comment
+  11:12  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+
+✖ 7 problems (6 errors, 1 warning)
+
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  frontend@0.1.0 lint: `eslint`
+Exit status 1

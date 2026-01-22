@@ -1,0 +1,84 @@
+---
+title: Project Overview
+description: A modern, high-performance monorepo boilerplate for building scalable web applications.
+---
+
+## 1. Architecture
+
+The project is organized as a monorepo using **Turborepo** and **pnpm** workspaces. Documentation is integrated directly into the dashboard using **Fumadocs**.
+
+<Cards>
+  <Card title="apps/frontend">
+    Next.js 16+, React 19, Tailwind v4, Shadcn/UI, Fumadocs.
+  </Card>
+  <Card title="apps/backend">
+    NestJS 11 REST API, Modular Architecture, Prisma ORM.
+  </Card>
+  <Card title="packages/shared">
+    Shared TypeScript types, DTOs, and utilities.
+  </Card>
+  <Card title="Infrastructure">
+    Docker Compose for PostgreSQL and services.
+  </Card>
+</Cards>
+
+## 2. AI Agent & Living Documentation
+
+This boilerplate is designed to be **AI-First**. It includes a "Living Documentation" workflow that ensures code and documentation stay in sync.
+
+- **Agent Context**: Optimized for **Gemini CLI** via the `.gemini/` folder.
+- **Rules & Skills**: Custom instructions guide AI agents through complex tasks.
+- **Sync Verification**: Use the `doc-check` tool to ensure architectural changes are documented.
+
+## 3. Getting Started
+
+### Prerequisites
+
+- **Node.js**: Latest LTS.
+- **pnpm**: `v10.28.1`.
+- **Docker**: Required for database.
+
+### Installation
+
+```bash
+pnpm install
+```
+
+### Running the Project
+
+Choose one of the following methods to run the application:
+
+#### Option 1: Local Development (Recommended)
+1. **Start the database**: `docker compose up db -d`
+2. **Run dev servers**: `pnpm dev`
+
+#### Option 2: Full Docker
+Run the entire stack inside containers:
+```bash
+docker compose up
+```
+
+## 4. Key Commands
+
+| Command | Description |
+| :--- | :--- |
+| `pnpm dev` | Start all apps in development mode. |
+| `pnpm build` | Build all packages and applications. |
+| `pnpm lint` | Run ESLint across the monorepo. |
+| `pnpm turbo check-types` | Run global TypeScript type checking. |
+| `pnpm doc-check` | Verify if documentation is in sync with code changes. |
+| `pnpm --filter backend prisma:migrate` | Run database migrations. |
+
+## 5. Development Conventions
+
+<Callout title="Strict Typing" type="info">
+  Mandatory strict mode for TypeScript.
+</Callout>
+
+<Callout title="No Prettier" type="info">
+  Formatting and linting are handled exclusively by ESLint.
+</Callout>
+
+<Callout title="Shared Code" type="info">
+  All common interfaces and DTOs MUST reside in `@repo/shared`.
+</Callout>
