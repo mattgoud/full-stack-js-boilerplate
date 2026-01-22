@@ -8,8 +8,21 @@ import { RootProvider } from 'fumadocs-ui/provider/next';
 export default function Layout({ children }: { children: ReactNode }) {
   return (
     <div className="fd-theme-fuma flex flex-1 flex-col">
-      <RootProvider>
-        <DocsLayout tree={source.pageTree} {...baseOptions}>
+      <RootProvider 
+        search={{
+          enabled: true,
+          options: {
+            api: '/api/search'
+          }
+        }}
+      >
+        <DocsLayout 
+          tree={source.pageTree} 
+          {...baseOptions}
+          sidebar={{
+            defaultOpenLevel: 0,
+          }}
+        >
           {children}
         </DocsLayout>
       </RootProvider>

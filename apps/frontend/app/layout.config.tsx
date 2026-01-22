@@ -1,4 +1,5 @@
 import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
+import { LayoutDashboard } from 'lucide-react';
 
 /**
  * Shared layout configurations
@@ -9,13 +10,14 @@ import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
  */
 export const baseOptions: BaseLayoutProps = {
   nav: {
-    title: 'Project Docs',
+    title: 'Full Stack JS Boilerplate',
   },
   links: [
     {
+      icon: <LayoutDashboard />,
       text: 'Dashboard',
       url: '/dashboard',
       active: 'nested-url',
-    },
+    }
   ],
 };
