@@ -71,7 +71,7 @@ docker compose up
 - `pnpm dev`: Start all applications in development mode.
 - `pnpm build`: Build all packages and applications.
 - `pnpm lint`: Run ESLint across the entire monorepo.
-- `pnpm turbo check-types`: Run TypeScript type checking globally.
+- `pnpm check-types`: Run TypeScript type checking globally.
 - `pnpm doc-check`: Verify if documentation is in sync with code changes.
 - `pnpm --filter backend prisma:migrate`: Run database migrations.
 

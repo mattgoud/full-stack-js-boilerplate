@@ -11,11 +11,11 @@ echo "--- 🔒 Security Check ---"
 
 # 1. Formatting and Linting (ESLint handles everything)
 echo "--- 🛠️  Linting & Formatting ---"
-pnpm turbo lint
+pnpm lint
 
 # 2. TypeScript type checking across the entire monorepo
 echo "--- 🟦 TypeScript Type Check ---"
-pnpm turbo check-types
+pnpm check-types
 
 # 3. Documentation Sync Check
 echo "--- 📚 Documentation Check ---"

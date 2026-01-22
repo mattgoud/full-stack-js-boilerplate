@@ -58,7 +58,7 @@ These commands utilize TurboRepo to execute tasks across the workspace.
 
 *   **Build**: `pnpm build`
 *   **Lint**: `pnpm lint`
-*   **Type Check**: `pnpm turbo check-types`
+*   **Type Check**: `pnpm check-types`
 *   **Clean**: `pnpm clean`
 
 ### Backend Specifics (`apps/backend`)
