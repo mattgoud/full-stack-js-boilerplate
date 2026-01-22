@@ -20,10 +20,15 @@ build
 /postgres_data
 
 # Logs
+*.log
+*_output.txt
 npm-debug.log*
 yarn-debug.log*
 pnpm-debug.log*
 lerna-debug.log*
+
+# TypeScript
+*.tsbuildinfo
 
 # IDE
 .vscode/*
