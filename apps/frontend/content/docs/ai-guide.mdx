@@ -34,14 +34,6 @@ These tools are registered in `.gemini/tools.md`.
 - **AI Agent**: Will automatically run `verify-docs.sh` and warn you if you forgot to document a feature.
 - **Manual**: You can run the check anytime to see if your docs are lagging behind your features.
 
-### Search Engine (Orama)
-
-The documentation features a full-text search engine powered by [Orama](https://orama.com/).
-
-- **Dynamic Indexing**: There is **no manual indexing step**. The search results are generated on-the-fly via the `/api/search` route.
-- **Instant Sync**: As soon as you update an MDX file, the changes are reflected in the search results without rebuilding the application.
-- **Granular Results**: The engine indexes content block by block, providing precise links to specific sections of the documentation.
-
 ## 2. Structured Feature Planning (Conductor)
 
 This boilerplate uses the **Conductor** methodology to manage complex features through isolated units of work called **Tracks**.

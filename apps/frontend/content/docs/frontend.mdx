@@ -18,12 +18,18 @@ description: Deep dive into the frontend architectural decisions, structure, and
   <Card title="Icons" href="https://lucide.dev/" icon={<LayoutIcon />}>
     Lucide React
   </Card>
-  <Card title="Documentation" href="https://fumadocs.dev/" icon={<DatabaseIcon />}>
-    Fumadocs (MDX based)
-  </Card>
+- **Documentation**: [Fumadocs](https://fumadocs.dev/) (MDX based) with integrated **Orama** search.
 </Cards>
 
-## 2. Directory Structure
+## 2. Search Engine (Orama)
+
+The documentation features a full-text search engine powered by [Orama](https://orama.com/).
+
+- **Dynamic Indexing**: There is **no manual indexing step**. The search results are generated on-the-fly via the `/api/search` route.
+- **Instant Sync**: As soon as you update an MDX file, the changes are reflected in the search results without rebuilding the application.
+- **Granular Results**: The engine indexes content block by block, providing precise links to specific sections of the documentation.
+
+## 3. Directory Structure
 
 ```txt
 apps/frontend/
