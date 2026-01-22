@@ -1,6 +1,5 @@
 // @ts-nocheck
-import { default as __fd_glob_5 } from "../content/docs/meta.json?collection=meta"
-import * as __fd_glob_4 from "../content/docs/workflows.mdx?collection=docs"
+import { default as __fd_glob_4 } from "../content/docs/meta.json?collection=meta"
 import * as __fd_glob_3 from "../content/docs/index.mdx?collection=docs"
 import * as __fd_glob_2 from "../content/docs/frontend.mdx?collection=docs"
 import * as __fd_glob_1 from "../content/docs/backend.mdx?collection=docs"
@@ -13,6 +12,6 @@ const create = server<typeof Config, import("fumadocs-mdx/runtime/types").Intern
   }
 }>({"doc":{"passthroughs":["extractedReferences"]}});
 
-export const docs = await create.doc("docs", "content/docs", {"ai-guide.mdx": __fd_glob_0, "backend.mdx": __fd_glob_1, "frontend.mdx": __fd_glob_2, "index.mdx": __fd_glob_3, "workflows.mdx": __fd_glob_4, });
+export const docs = await create.doc("docs", "content/docs", {"ai-guide.mdx": __fd_glob_0, "backend.mdx": __fd_glob_1, "frontend.mdx": __fd_glob_2, "index.mdx": __fd_glob_3, });
 
-export const meta = await create.meta("meta", "content/docs", {"meta.json": __fd_glob_5, });
+export const meta = await create.meta("meta", "content/docs", {"meta.json": __fd_glob_4, });
