@@ -11,6 +11,7 @@ import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
 import { Steps } from 'fumadocs-ui/components/steps';
 import { Card, Cards } from 'fumadocs-ui/components/card';
 import { Callout } from 'fumadocs-ui/components/callout';
+import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
 import { Layout as LayoutIcon, Server as ServerIcon, Box as BoxIcon, Database as DatabaseIcon } from 'lucide-react';
 
 export default async function Page(props: {
@@ -39,6 +40,8 @@ export default async function Page(props: {
             Card,
             Cards,
             Callout,
+            Accordion,
+            Accordions,
             LayoutIcon,
             ServerIcon,
             BoxIcon,

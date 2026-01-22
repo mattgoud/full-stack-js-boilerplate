@@ -15,22 +15,23 @@ This project uses a **Living Documentation** strategy. The documentation is code
 
 To ensure the documentation stays in sync, the project uses automated checks:
 
-<Steps>
-### Detection
-A dedicated script `./.gemini/scripts/verify-docs.sh` compares code changes with documentation updates.
-
-### Security
-The `Security-Check` tool (`verify-security.sh`) scans for secrets and unwanted files before commit.
-
-### IA Mandate
-The `.gemini/rules.md` forces the agent to run these checks before finalizing any task.
-
-### Registry
-These tools are registered in `.gemini/tools.md`.
-</Steps>
+<Accordions>
+  <Accordion title="Detection">
+    A dedicated script `./.gemini/scripts/verify-docs.sh` compares code changes with documentation updates.
+  </Accordion>
+  <Accordion title="Security">
+    The `Security-Check` tool (`verify-security.sh`) scans for secrets and unwanted files before commit.
+  </Accordion>
+  <Accordion title="IA Mandate">
+    The `.gemini/rules.md` forces the agent to run these checks before finalizing any task.
+  </Accordion>
+  <Accordion title="Registry">
+    These tools are registered in `.gemini/tools.md`.
+  </Accordion>
+</Accordions>
 
 #### How to use the workflow:
-
+---
 - **AI Agent**: Will automatically run `verify-docs.sh` and warn you if you forgot to document a feature.
 - **Manual**: You can run the check anytime to see if your docs are lagging behind your features.
 
@@ -47,19 +48,20 @@ A Track is a self-contained folder containing everything an AI agent needs to im
 
 ### The Conductor Workflow
 
-<Steps>
-### Initialization
-Use `conductor:newTrack` to define a new feature. The agent will collaboratively generate the specification and plan.
-
-### Implementation
-Run `conductor:implement --track <id>` to start the automated coding process. The agent will strictly follow the `plan.md`.
-
-### Verification & Checkpointing
-At the end of each phase, the agent executes a mandatory **Phase Completion Protocol**:
-1. Automated tests run.
-2. Manual verification steps are proposed to the user.
-3. A **Checkpoint Commit** is created with an auditable verification report in Git Notes.
-</Steps>
+<Accordions>
+  <Accordion title="Initialization">
+    Use `conductor:newTrack` to define a new feature. The agent will collaboratively generate the specification and plan.
+  </Accordion>
+  <Accordion title="Implementation">
+    Run `conductor:implement --track <id>` to start the automated coding process. The agent will strictly follow the `plan.md`.
+  </Accordion>
+  <Accordion title="Verification & Checkpointing">
+    At the end of each phase, the agent executes a mandatory **Phase Completion Protocol**:
+    1. Automated tests run.
+    2. Manual verification steps are proposed to the user.
+    3. A **Checkpoint Commit** is created with an auditable verification report in Git Notes.
+  </Accordion>
+</Accordions>
 
 ## 3. Recommended MCP Servers
 
