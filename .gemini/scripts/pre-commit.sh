@@ -5,6 +5,10 @@ set -e
 
 echo "🔍 Starting pre-commit validation..."
 
+# 0. Security & Hygiene Check
+echo "--- 🔒 Security Check ---"
+./.gemini/scripts/verify-security.sh
+
 # 1. Formatting and Linting (ESLint handles everything)
 echo "--- 🛠️  Linting & Formatting ---"
 pnpm turbo lint

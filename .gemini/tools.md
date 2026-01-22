@@ -5,6 +5,7 @@
 - **Type-Check**: `pnpm turbo check-types` (Verifies global TypeScript consistency).
 - **Test**: `pnpm turbo test` (Executes the unit and integration test suite).
 - **Doc-Check**: `./.gemini/scripts/verify-docs.sh` (Verifies if code changes are mirrored in documentation).
+- **Security-Check**: `./.gemini/scripts/verify-security.sh` (Scans for secrets and unwanted files).
 
 ## Test Tools
 - **Global Test**: `pnpm turbo test` (Runs Vitest everywhere).

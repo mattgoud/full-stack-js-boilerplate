@@ -11,6 +11,11 @@
 - **Syncing**: Any modification to architecture, workflows, or critical configurations MUST be immediately reflected in the documentation pages.
 - **Verification**: When validating tasks, check if the documentation needs updates.
 
+## Security & Hygiene
+- **Secrets**: NEVER commit API keys, secrets, or private keys. Use `.env` files and ensure they are ignored.
+- **Cleanup**: Before committing, ensure no temporary log files (`*_output.txt`) or build artifacts are staged.
+- **Verification**: The `Security-Check` tool must be part of the pre-commit workflow.
+
 ## Code Conventions
 - **TypeScript**: Strict mode mandatory.
 - **DTOs**: Use the "!" operator (definite assignment assertion) for properties without initializers (e.g., `email!: string`).
