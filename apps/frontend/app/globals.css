@@ -53,8 +53,8 @@
 }
 
 :root {
-  --fd-container-width: 1600px;
-  --fd-layout-width: 2000px;
+  --fd-container-width: 1400px;
+  --fd-layout-width: 1600px;
   --radius: 0.625rem;
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
