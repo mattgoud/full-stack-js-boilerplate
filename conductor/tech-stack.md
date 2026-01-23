@@ -13,12 +13,17 @@
 - **Documentation:** Fumadocs (MDX based)
 - **Icons:** Lucide React
 - **Testing:** Vitest
+- **Authentication:** GitHub OAuth (via Backend Passport)
 
 ## Backend (`apps/backend`)
 - **Framework:** NestJS 11
 - **ORM:** Prisma
 - **Database:** PostgreSQL
 - **Testing:** Jest (Unit & E2E)
+- **Authentication:**
+    - Passport.js with `passport-github2` strategy
+    - JWT (JSON Web Tokens) for session management
+    - Next.js Middleware for server-side route protection
 
 ## Shared Package (`packages/shared`)
 - **Purpose:** Centralized TypeScript types, DTOs, and utility functions shared across applications.
