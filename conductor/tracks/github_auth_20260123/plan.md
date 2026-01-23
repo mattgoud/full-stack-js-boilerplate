@@ -21,7 +21,7 @@ This plan follows the TDD workflow and high-coverage requirements as defined in 
 - [x] Task: Conductor - User Manual Verification 'Phase 3: Frontend Login Page (Shadcn/UI Split Layout)' (Protocol in workflow.md)
 - [ ] Task: Conductor - User Manual Verification 'Phase 3: Frontend Login Page (Shadcn/UI Split Layout)' (Protocol in workflow.md)
 
-## Phase 4: Route Protection and Final Integration
+## Phase 4: Route Protection and Final Integration [checkpoint: 21236fb]
 - [x] Task: Secure Dashboard Access (f52efcd)
 - [x] Task: Final E2E Flow Verification (manual)
 - [x] Task: Conductor - User Manual Verification 'Phase 4: Route Protection and Final Integration' (Protocol in workflow.md)
