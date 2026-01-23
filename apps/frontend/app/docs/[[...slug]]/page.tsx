@@ -12,7 +12,7 @@ import { Steps } from 'fumadocs-ui/components/steps';
 import { Card, Cards } from 'fumadocs-ui/components/card';
 import { Callout } from 'fumadocs-ui/components/callout';
 import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
-import { Layout as LayoutIcon, Server as ServerIcon, Box as BoxIcon, Database as DatabaseIcon } from 'lucide-react';
+import { Layout as LayoutIcon, Server as ServerIcon, Box as BoxIcon, Database as DatabaseIcon, Lock as LockIcon } from 'lucide-react';
 
 export default async function Page(props: {
   params: Promise<{ slug?: string[] }>;
@@ -45,7 +45,8 @@ export default async function Page(props: {
             LayoutIcon,
             ServerIcon,
             BoxIcon,
-            DatabaseIcon
+            DatabaseIcon,
+            LockIcon
           }} 
         />
       </DocsBody>
