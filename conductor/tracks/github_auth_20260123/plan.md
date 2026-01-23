@@ -9,11 +9,8 @@ This plan follows the TDD workflow and high-coverage requirements as defined in 
 - [x] Task: Conductor - User Manual Verification 'Phase 1: Data Model & Shared Types' (Protocol in workflow.md)
 
 ## Phase 2: Backend GitHub OAuth Implementation
-- [~] Task: Setup Passport GitHub Strategy
-    - [ ] Install dependencies: `passport-github2`, `@types/passport-github2` in `apps/backend`
-    - [ ] Write unit tests for `GithubStrategy` logic (mocking profile response)
-    - [ ] Implement `GithubStrategy` in `apps/backend/src/auth/strategies/github.strategy.ts`
-- [ ] Task: Implement Auth Service Logic for GitHub
+- [x] Task: Setup Passport GitHub Strategy (3d84dde)
+- [~] Task: Implement Auth Service Logic for GitHub
     - [ ] Write unit tests for `validateGithubUser` in `AuthService`
     - [ ] Implement logic to find or create a user based on GitHub profile (Email and Username)
 - [ ] Task: Auth Controller OAuth Endpoints
