@@ -105,11 +105,11 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const navUser = user ? {
     name: user.name || user.username,
     email: user.email,
-    avatar: user.avatarUrl || "",
+    avatar: user.avatarUrl || undefined,
   } : {
     name: "Guest",
     email: "",
-    avatar: "",
+    avatar: undefined,
   }
 
   return (
