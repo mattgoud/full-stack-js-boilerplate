@@ -10,10 +10,8 @@ This plan follows the TDD workflow and high-coverage requirements as defined in 
 
 ## Phase 2: Backend GitHub OAuth Implementation
 - [x] Task: Setup Passport GitHub Strategy (3d84dde)
-- [~] Task: Implement Auth Service Logic for GitHub
-    - [ ] Write unit tests for `validateGithubUser` in `AuthService`
-    - [ ] Implement logic to find or create a user based on GitHub profile (Email and Username)
-- [ ] Task: Auth Controller OAuth Endpoints
+- [x] Task: Implement Auth Service Logic for GitHub (5fdb695)
+- [~] Task: Auth Controller OAuth Endpoints
     - [ ] Write E2E tests for `/auth/github` and `/auth/github/callback`
     - [ ] Implement controller methods and `@UseGuards(AuthGuard('github'))`
 - [ ] Task: Conductor - User Manual Verification 'Phase 2: Backend GitHub OAuth Implementation' (Protocol in workflow.md)

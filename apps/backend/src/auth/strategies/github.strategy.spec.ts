@@ -69,4 +69,24 @@ describe('GithubStrategy', () => {
     });
     expect(done).toHaveBeenCalled();
   });
+
+  it('should validate user even with missing fields', async () => {
+    const profile = {
+      id: '123',
+    };
+    const done = jest.fn();
+
+    await strategy.validate('access-token', 'refresh-token', profile as any, (err, user) => {
+        done(err, user);
+    });
+
+    expect(authService.validateGithubUser).toHaveBeenCalledWith({
+      githubId: '123',
+      email: '',
+      username: '',
+      name: '',
+      avatarUrl: '',
+    });
+    expect(done).toHaveBeenCalled();
+  });
 });
