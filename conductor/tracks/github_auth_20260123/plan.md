@@ -22,9 +22,6 @@ This plan follows the TDD workflow and high-coverage requirements as defined in 
 - [ ] Task: Conductor - User Manual Verification 'Phase 3: Frontend Login Page (Shadcn/UI Split Layout)' (Protocol in workflow.md)
 
 ## Phase 4: Route Protection and Final Integration
-- [~] Task: Secure Dashboard Access
-    - [ ] Update Next.js middleware to protect `/dashboard`
-    - [ ] Write tests verifying redirection of unauthenticated users
-- [ ] Task: Final E2E Flow Verification
-    - [ ] Manually verify the full flow from Login -> GitHub -> Dashboard
-- [ ] Task: Conductor - User Manual Verification 'Phase 4: Route Protection and Final Integration' (Protocol in workflow.md)
+- [x] Task: Secure Dashboard Access (f52efcd)
+- [x] Task: Final E2E Flow Verification (manual)
+- [x] Task: Conductor - User Manual Verification 'Phase 4: Route Protection and Final Integration' (Protocol in workflow.md)
