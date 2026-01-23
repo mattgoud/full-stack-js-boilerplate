@@ -16,11 +16,8 @@ This plan follows the TDD workflow and high-coverage requirements as defined in 
 
 ## Phase 3: Frontend Login Page (Shadcn/UI Split Layout)
 - [x] Task: Setup GitHub Auth Button Component (e3a0f5e)
-- [~] Task: Implement Split Layout Login Page
-    - [ ] Create `apps/frontend/app/login/page.tsx`
-    - [ ] Use Shadcn/UI for the split screen design (Side A: Visual/Branding, Side B: Login Button)
-    - [ ] Write Vitest tests for the Login page structure
-- [ ] Task: Handle OAuth Callback and JWT
+- [x] Task: Implement Split Layout Login Page (bd89a42)
+- [~] Task: Handle OAuth Callback and JWT
     - [ ] Implement client-side logic to extract/receive JWT from the callback
     - [ ] Update `AuthProvider` to handle the new authentication state
 - [ ] Task: Conductor - User Manual Verification 'Phase 3: Frontend Login Page (Shadcn/UI Split Layout)' (Protocol in workflow.md)
