@@ -15,10 +15,8 @@ This plan follows the TDD workflow and high-coverage requirements as defined in 
 - [x] Task: Conductor - User Manual Verification 'Phase 2: Backend GitHub OAuth Implementation' (Protocol in workflow.md)
 
 ## Phase 3: Frontend Login Page (Shadcn/UI Split Layout)
-- [~] Task: Setup GitHub Auth Button Component
-    - [ ] Create a reusable `GithubSignInButton` using Shadcn `Button` and `Lucide` icons
-    - [ ] Write Vitest tests for the button component
-- [ ] Task: Implement Split Layout Login Page
+- [x] Task: Setup GitHub Auth Button Component (e3a0f5e)
+- [~] Task: Implement Split Layout Login Page
     - [ ] Create `apps/frontend/app/login/page.tsx`
     - [ ] Use Shadcn/UI for the split screen design (Side A: Visual/Branding, Side B: Login Button)
     - [ ] Write Vitest tests for the Login page structure
