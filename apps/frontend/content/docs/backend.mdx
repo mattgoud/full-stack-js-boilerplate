@@ -91,7 +91,64 @@ import { CreateUserDto } from "@repo/shared";
 
 ## 5. Testing
 
+
+
 | Type | Command |
+
 | :--- | :--- |
+
 | Unit Tests | `pnpm --filter backend test` |
+
 | E2E Tests | `pnpm --filter backend test:e2e` |
+
+
+
+## 6. Authentication
+
+
+
+The backend implements a multi-strategy authentication system using [Passport.js](https://docs.nestjs.com/recipes/passport).
+
+
+
+### Strategies
+
+
+
+- **GitHub OAuth (`GithubStrategy`)**: Handles redirection to GitHub and callback processing. It automatically creates a new user in the database upon the first successful login.
+
+- **JWT (`JwtStrategy`)**: Validates session tokens passed in the `Authorization` header as a Bearer token.
+
+
+
+### Endpoints
+
+
+
+| Endpoint | Method | Guard | Description |
+
+| :--- | :--- | :--- | :--- |
+
+| `/auth/github` | `GET` | `github` | Redirects the user to GitHub for authorization. |
+
+| `/auth/github/callback` | `GET` | `github` | Handles the return from GitHub and issues a JWT. |
+
+| `/auth/profile` | `GET` | `jwt` | Returns the currently authenticated user's profile. |
+
+
+
+### Environment Variables
+
+
+
+The following variables are required in `apps/backend/.env`:
+
+- `GITHUB_CLIENT_ID`: Your GitHub OAuth App Client ID.
+
+- `GITHUB_CLIENT_SECRET`: Your GitHub OAuth App Client Secret.
+
+- `GITHUB_CALLBACK_URL`: Typically `http://localhost:3001/auth/github/callback`.
+
+- `JWT_SECRET`: Secret key used to sign session tokens.
+
+- `FRONTEND_URL`: URL of the frontend application (for redirection).

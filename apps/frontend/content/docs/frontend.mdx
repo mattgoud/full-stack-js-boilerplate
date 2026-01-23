@@ -95,6 +95,70 @@ import { UserDto } from "@repo/shared";
 
 ## 5. Testing
 
+
+
 | Type | Command |
+
 | :--- | :--- |
+
 | Unit Tests | `pnpm --filter frontend test` |
+
+
+
+## 6. Authentication
+
+
+
+The frontend handles authentication state and session management using a custom provider and Next.js middleware.
+
+
+
+### Auth Provider
+
+
+
+The `AuthProvider` (`@/components/auth-provider.tsx`) wraps the application and provides the following:
+
+- **State**: Currently authenticated `user` object and `token`.
+
+- **Persistence**: Tokens are stored in `localStorage` and a non-HTTP-only cookie (for middleware access).
+
+- **Profile Fetching**: Automatically fetches the user profile from the backend on mount if a token is present.
+
+
+
+```tsx
+
+import { useAuth } from "@/components/auth-provider";
+
+
+
+const { user, login, logout, isAuthenticated } = useAuth();
+
+```
+
+
+
+### Route Protection
+
+
+
+Server-side route protection is implemented via **Edge Middleware** in `apps/frontend/proxy.ts`.
+
+
+
+- **Matcher**: Automatically intercepts requests to `/dashboard/:path*`.
+
+- **Logic**: If no `auth_token` cookie is present, the user is redirected to `/login`.
+
+
+
+### UI Components
+
+
+
+- **Login Page**: A modern split-layout design featuring branding on one side and the "Sign in with GitHub" button on the other.
+
+- **GitHub Button**: A reusable `GithubSignInButton` component that initiates the OAuth flow.
+
+- **Sidebar Integration**: The `AppSidebar` and `NavUser` components are fully dynamic, displaying the logged-in user's name, email, and avatar.
