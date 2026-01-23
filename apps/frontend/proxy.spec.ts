@@ -1,4 +1,4 @@
-import { middleware } from './proxy';
+import { proxy } from './proxy';
 import { NextRequest, NextResponse } from 'next/server';
 import { describe, it, expect, vi } from 'vitest';
 
@@ -9,7 +9,7 @@ vi.mock('next/server', () => ({
   },
 }));
 
-describe('middleware', () => {
+describe('proxy', () => {
   it('should redirect to login if accessing dashboard without token', () => {
     const req = {
       nextUrl: { pathname: '/dashboard' },
@@ -17,7 +17,7 @@ describe('middleware', () => {
       url: 'http://localhost:3000',
     } as unknown as NextRequest;
 
-    middleware(req);
+    proxy(req);
     expect(NextResponse.redirect).toHaveBeenCalledWith(new URL('/login', 'http://localhost:3000'));
   });
 
@@ -28,7 +28,7 @@ describe('middleware', () => {
       url: 'http://localhost:3000',
     } as unknown as NextRequest;
 
-    middleware(req);
+    proxy(req);
     expect(NextResponse.next).toHaveBeenCalled();
   });
 });
