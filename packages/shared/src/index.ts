@@ -2,7 +2,12 @@
 export interface User {
   id: string;
   email: string;
+  username: string;
+  name?: string | null;
+  githubId?: string | null;
+  avatarUrl?: string | null;
   createdAt: Date;
+  updatedAt: Date;
 }
 
 // Example of shared constant

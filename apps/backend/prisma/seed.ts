@@ -20,6 +20,7 @@ async function main() {
     update: {},
     create: {
       email: 'dev@example.com',
+      username: 'devadmin',
       name: 'Developer Admin',
       githubId: 'github-12345',
     },
