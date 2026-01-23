@@ -22,7 +22,14 @@ export class AuthController {
     const token = await Promise.resolve(this.jwtService.sign(payload));
 
     // Redirect back to frontend with token
-    const frontendUrl = process.env.FRONTEND_URL || 'http://localhost:3000';
-    res.redirect(`${frontendUrl}/auth-callback?token=${token}`);
-  }
-}
+        const frontendUrl = process.env.FRONTEND_URL || 'http://localhost:3000';
+        res.redirect(`${frontendUrl}/auth-callback?token=${token}`);
+      }
+    
+        @Get('profile')
+        @UseGuards(AuthGuard('jwt'))
+        getProfile(@Req() req: Request) {
+          return req.user as User;
+        }
+      }
+      

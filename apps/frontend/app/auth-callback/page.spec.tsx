@@ -25,6 +25,7 @@ describe('AuthCallbackPage', () => {
     vi.mocked(useAuth).mockReturnValue({
       login: mockLogin,
       token: null,
+      user: null,
       logout: vi.fn(),
       isAuthenticated: false,
     });
