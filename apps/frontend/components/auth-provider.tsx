@@ -23,12 +23,14 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   const login = (newToken: string) => {
     localStorage.setItem('auth_token', newToken);
+    document.cookie = `auth_token=${newToken}; path=/; max-age=86400`;
     setToken(newToken);
     router.push('/dashboard');
   };
 
   const logout = () => {
     localStorage.removeItem('auth_token');
+    document.cookie = 'auth_token=; path=/; max-age=0';
     setToken(null);
     router.push('/login');
   };
