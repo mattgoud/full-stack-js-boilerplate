@@ -14,12 +14,11 @@ This plan follows the TDD workflow and high-coverage requirements as defined in 
 - [x] Task: Auth Controller OAuth Endpoints (cc0289a)
 - [x] Task: Conductor - User Manual Verification 'Phase 2: Backend GitHub OAuth Implementation' (Protocol in workflow.md)
 
-## Phase 3: Frontend Login Page (Shadcn/UI Split Layout)
+## Phase 3: Frontend Login Page (Shadcn/UI Split Layout) [checkpoint: 3915b49]
 - [x] Task: Setup GitHub Auth Button Component (e3a0f5e)
 - [x] Task: Implement Split Layout Login Page (bd89a42)
-- [~] Task: Handle OAuth Callback and JWT
-    - [ ] Implement client-side logic to extract/receive JWT from the callback
-    - [ ] Update `AuthProvider` to handle the new authentication state
+- [x] Task: Handle OAuth Callback and JWT (9bc9b37)
+- [x] Task: Conductor - User Manual Verification 'Phase 3: Frontend Login Page (Shadcn/UI Split Layout)' (Protocol in workflow.md)
 - [ ] Task: Conductor - User Manual Verification 'Phase 3: Frontend Login Page (Shadcn/UI Split Layout)' (Protocol in workflow.md)
 
 ## Phase 4: Route Protection and Final Integration
