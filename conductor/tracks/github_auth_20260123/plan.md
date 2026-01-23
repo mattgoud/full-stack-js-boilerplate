@@ -8,13 +8,11 @@ This plan follows the TDD workflow and high-coverage requirements as defined in 
     - [x] Add `githubId` to `UserDto` or relevant interfaces in `packages/shared/src/user.dto.ts`
 - [x] Task: Conductor - User Manual Verification 'Phase 1: Data Model & Shared Types' (Protocol in workflow.md)
 
-## Phase 2: Backend GitHub OAuth Implementation
+## Phase 2: Backend GitHub OAuth Implementation [checkpoint: f2ad468]
 - [x] Task: Setup Passport GitHub Strategy (3d84dde)
 - [x] Task: Implement Auth Service Logic for GitHub (5fdb695)
-- [~] Task: Auth Controller OAuth Endpoints
-    - [ ] Write E2E tests for `/auth/github` and `/auth/github/callback`
-    - [ ] Implement controller methods and `@UseGuards(AuthGuard('github'))`
-- [ ] Task: Conductor - User Manual Verification 'Phase 2: Backend GitHub OAuth Implementation' (Protocol in workflow.md)
+- [x] Task: Auth Controller OAuth Endpoints (cc0289a)
+- [x] Task: Conductor - User Manual Verification 'Phase 2: Backend GitHub OAuth Implementation' (Protocol in workflow.md)
 
 ## Phase 3: Frontend Login Page (Shadcn/UI Split Layout)
 - [ ] Task: Setup GitHub Auth Button Component
