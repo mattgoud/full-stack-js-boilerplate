@@ -2,11 +2,11 @@
 
 This plan follows the TDD workflow and high-coverage requirements as defined in the project's `workflow.md`.
 
-## Phase 1: Data Model & Shared Types
-- [x] Task: Update Prisma schema for GitHub Auth (a74613)
-- [x] Task: Update Shared User Types (b76497)
+## Phase 1: Data Model & Shared Types [checkpoint: 99c389a]
+- [x] Task: Update Prisma schema for GitHub Auth (95e745d)
+- [x] Task: Update Shared User Types (95e745d)
     - [x] Add `githubId` to `UserDto` or relevant interfaces in `packages/shared/src/user.dto.ts`
-- [ ] Task: Conductor - User Manual Verification 'Phase 1: Data Model & Shared Types' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 1: Data Model & Shared Types' (Protocol in workflow.md)
 
 ## Phase 2: Backend GitHub OAuth Implementation
 - [ ] Task: Setup Passport GitHub Strategy
